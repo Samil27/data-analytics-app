@@ -1,13 +1,17 @@
 import pandas as pd
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.DEBUG)
 
 def run_analysis():
     try:
         # Load data
-        print("Reading data...")
-        data = pd.read_excel('Data.xlsx')
-        print(data.head())
+        data = pd.read_excel('data/large_sample.xlsx')
+        logging.debug("Data loaded successfully:")
+        logging.debug(data.head())  # Print the first few rows of data for debugging
         
-        # Perform analysis (e.g., calculate mean)
+        # Perform analysis
         mean_value = data['value'].mean()
         median_value = data['value'].median()
         sum_metric1 = data['metric1'].sum()
@@ -20,5 +24,5 @@ def run_analysis():
             'sum_metric2': sum_metric2
         }
     except Exception as e:
-        print(f"Error: {e}")
-        return {}
+        logging.error(f"Error during analysis: {e}")
+        return {'error': str(e)}
