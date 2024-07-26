@@ -4,7 +4,7 @@ def run_analysis():
     try:
         # Load data
         print("Reading data...")
-        data = pd.read_excel('data/large_sample.xlsx')
+        data = pd.read_excel('Data.xlsx')
         print("Data read successfully!")
         
         # Perform analysis (e.g., calculate mean)
