@@ -5,7 +5,7 @@ def run_analysis():
         # Load data
         print("Reading data...")
         data = pd.read_excel('Data.xlsx')
-        print(data.head()
+        print(data.head())
         
         # Perform analysis (e.g., calculate mean)
         mean_value = data['value'].mean()
