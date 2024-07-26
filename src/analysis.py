@@ -6,8 +6,8 @@ logging.basicConfig(level=logging.DEBUG)
 
 def run_analysis():
     try:
-        # Load data
-        data = pd.read_excel('data/large_sample.xlsx')
+        # Load data from the root directory
+        data = pd.read_excel('/app/Data.xlsx')
         logging.debug("Data loaded successfully:")
         logging.debug(data.head())  # Print the first few rows of data for debugging
         
