@@ -6,6 +6,7 @@ app = Flask(__name__, template_folder='../templates')
 @app.route('/')
 def index():
     results = analysis.run_analysis()
+    print(results)
     return render_template('index.html', results=results)
 
 if __name__ == '__main__':
